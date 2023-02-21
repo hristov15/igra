@@ -28,4 +28,41 @@ canvas.onclick = function(e) {
 	heroy = Math.floor(y / sqside);
 	console.log(herox, heroy);
 	drawMap();
+}
+function moveLeft(){
+		herox--;
+		if(herox<0){
+			herox=herox+1;
+		}
+		drawMap();
+}
+function moveDown(){
+		heroy++;
+		if(heroy>=ny){
+			heroy=heroy-1;
+		}
+		drawMap();
+}
+function moveRight(){
+		herox++;
+		if(herox>=nx){
+			herox=herox-1;
+		}
+		drawMap();
+}
+function moveUp(){
+		heroy--;
+		if(heroy<0){
+			heroy=heroy+1;
+		}
+		drawMap();
+}
+document.onkeypress = function(e) {
+	let key = e.key;
+	switch(key) {
+		case "a": moveLeft(); break;
+		case "s": moveDown(); break;
+		case "d": moveRight(); break;
+		case "w": moveUp(); break;
 	}
+}
